@@ -17,8 +17,9 @@ export const Header: React.FC = () => {
     <StyledHeader>
       <Container>
         <HeaderWrapper>
-          <Logo/>
+          <Logo>TARON.</Logo>
           <StyledNav>
+            {/* <StyledLink to="/"></StyledLink> */}
             <StyledLink to="/about">About</StyledLink>
             <StyledLink to="/work">Work</StyledLink>
             <StyledLink to="/contact">Contact</StyledLink>

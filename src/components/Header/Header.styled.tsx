@@ -7,14 +7,20 @@ export const StyledHeader = styled.header`
   left: 0;
   right: 0;
   height: 80px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
   z-index: 1;
 
   background-color: transparent;
 `;
 
-export const HeaderWrapper = styled.section`
+export const HeaderWrapper = styled.div`
   display: flex;
-  height: 46px;
+  // justify-content: space-between;
+  align-items: center;
+  // width: 100%;
 `;
 
 export const Headerblock = styled.div`
@@ -36,25 +42,46 @@ export const Headerblock = styled.div`
 
 export const StyledNav = styled.nav`
   display: none;
+
   @media screen and (min-width: 1440px) {
     display: flex;
     gap: 30px;
-    margin-left: 187px;
+    width: 100%;
   }
 `;
 
 export const StyledLink = styled(NavLink)`
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
   font-family: "Poppins";
-  font-style: normal;
   font-weight: 500;
   font-size: 14px;
   line-height: 22px;
   color: "#23262A";
   white-space: nowrap;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #8baa36;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
   &.active {
     color: #8baa36;
   }
@@ -63,12 +90,22 @@ export const StyledLink = styled(NavLink)`
   :focus {
     color: #8baa36;
   }
+
+  // &:first-of-type {
+  //   justify-content: start;
+  //   flex-grow: 1;
+  // }
 `;
 
 export const Logo = styled.div`
-  margin-right: 8px;
   height: 24px;
-  width: 24px;
+  flex-grow: 1;
+
+  font-family: "Poppins";
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: "#23262A";
 
   background-color: #8baa36;
 `;
@@ -90,34 +127,4 @@ export const StyledBurger = styled.button`
   @media screen and (min-width: 1440px) {
     display: none;
   }
-`;
-
-export const UserProfileWrap = styled.div`
-  position: relative;
-  display: flex;
-  align-items: center;
-`;
-
-export const Avatar = styled.button`
-  display: block;
-  padding: 0;
-  border-radius: 50%;
-  border: solid 1px transparent;
-`;
-
-export const AvatarImg = styled.img`
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  opacity: 0.9;
-  &:hover {
-    width: 46px;
-    height: 46px;
-    opacity: 1;
-  }
-`;
-
-export const UserName = styled.p`
-  margin-left: 14px;
-  color: ${(p) => p.theme.colors.userNameColor};
 `;

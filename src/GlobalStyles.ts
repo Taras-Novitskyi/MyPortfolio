@@ -3,7 +3,6 @@ import "modern-normalize";
 
 export const GlobalStyles = createGlobalStyle`
 body {
-  min-height: 100%;
   margin: 0;
   font-family: 'Poppins', sans-serif;
   background-color: ${(p) => p.theme.colors.mainBgColor};

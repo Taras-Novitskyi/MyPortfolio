@@ -5,6 +5,7 @@ import BG from "../../images/bg.webp";
 
 export const BgContainer = styled.div`
   padding-top: 100px;
+  min-height: 100vh;
 
   background-image: url(${BG});
   background-size: cover;
