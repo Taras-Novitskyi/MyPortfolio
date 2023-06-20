@@ -18,26 +18,22 @@ export const StyledHeader = styled.header`
 
 export const HeaderWrapper = styled.div`
   display: flex;
-  // justify-content: space-between;
+  justify-content: space-between;
   align-items: center;
-  // width: 100%;
 `;
 
-export const Headerblock = styled.div`
-  top: ${(p) => p.theme.space(4.5)};
-  right: ${(p) => p.theme.space(4)};
+export const MenuContainer = styled.div`
+  display: flex;
+  align-items: center;
 
-  @media (min-width: 768px) {
+  /* @media (min-width: 768px) {
     top: ${(p) => p.theme.space(4.5)};
     right: ${(p) => p.theme.space(8)};
   }
   @media (min-width: 1440px) {
     top: ${(p) => p.theme.space(4.5)};
     right: ${(p) => p.theme.space(25)};
-  }
-  display: flex;
-  align-items: center;
-  margin-left: auto;
+  } */
 `;
 
 export const StyledNav = styled.nav`
@@ -53,15 +49,15 @@ export const StyledNav = styled.nav`
 export const StyledLink = styled(NavLink)`
   position: relative;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  // flex-direction: row;
+  // justify-content: center;
   align-items: center;
 
   font-family: "Poppins";
   font-weight: 500;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 22px;
-  color: "#23262A";
+  color: #a6a9b3;
   white-space: nowrap;
 
   &::after {
@@ -69,10 +65,10 @@ export const StyledLink = styled(NavLink)`
     position: absolute;
     width: 100%;
     transform: scaleX(0);
-    height: 2px;
+    height: 1px;
     bottom: 0;
     left: 0;
-    background-color: #8baa36;
+    background-color: #e4e6f0;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
   }
@@ -83,23 +79,17 @@ export const StyledLink = styled(NavLink)`
   }
 
   &.active {
-    color: #8baa36;
+    color: #e4e6f0;
   }
 
   &:hover,
   :focus {
-    color: #8baa36;
+    color: #e4e6f0;
   }
-
-  // &:first-of-type {
-  //   justify-content: start;
-  //   flex-grow: 1;
-  // }
 `;
 
-export const Logo = styled.div`
+export const Logo = styled(NavLink)`
   height: 24px;
-  flex-grow: 1;
 
   font-family: "Poppins";
   font-weight: 500;
@@ -107,7 +97,7 @@ export const Logo = styled.div`
   line-height: 22px;
   color: "#23262A";
 
-  background-color: #8baa36;
+  // background-color: #8baa36;
 `;
 
 export const StyledBurger = styled.button`

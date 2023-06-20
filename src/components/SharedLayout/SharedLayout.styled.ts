@@ -8,5 +8,4 @@ export const LayoutContainer = styled.div`
 
 export const Main = styled.main`
   flex-grow: 1;
-
 `;
