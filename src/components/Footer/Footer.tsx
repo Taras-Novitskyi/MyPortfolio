@@ -1,7 +1,11 @@
 import React from "react";
 
-import { StyledFooter } from "./Footer.styled";
+import { StyledFooter, TextWrapper } from "./Footer.styled";
 
 export const Footer: React.FC = () => {
-  return <StyledFooter>footer</StyledFooter>;
+  return (
+    <StyledFooter>
+      <TextWrapper>© 2023 "All Rights Reserved"</TextWrapper>
+    </StyledFooter>
+  );
 };
