@@ -1,9 +1,9 @@
 import React from "react";
 
 import { Container } from "../Container/Container";
-import { BgContainer } from "./Sidebar.styled";
+import { BgContainer } from "./Hero.styled";
 
-export const Sidebar: React.FC = () => {
+export const Hero: React.FC = () => {
   return (
     <BgContainer>
       <Container>Sidebar</Container>

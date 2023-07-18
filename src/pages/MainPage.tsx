@@ -1,9 +1,9 @@
 import React from "react";
 
-import { Sidebar } from "../components/Sidebar/Sidebar";
+import { Hero } from "../components/Hero/Hero";
 
 const MainPage: React.FC = () => {
-  return <Sidebar/>;
+  return <Hero/>;
 };
 
 export default MainPage;
