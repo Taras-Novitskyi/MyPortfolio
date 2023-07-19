@@ -39,7 +39,7 @@ export const MenuContainer = styled.div`
 export const StyledNav = styled.nav`
   display: none;
 
-  @media screen and (min-width: 1440px) {
+  @media screen and (min-width: 768px) {
     display: flex;
     gap: 30px;
     width: 100%;
@@ -89,32 +89,39 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const Logo = styled(NavLink)`
-  height: 24px;
+  // height: 24px;
 
-  font-family: "Poppins";
-  font-weight: 500;
-  font-size: 14px;
+  font-family: "Kaushan Script", cursive;
+  font-weight: 700;
+  font-size: 18px;
   line-height: 22px;
-  color: "#23262A";
+  color: #53336e;
 
-  // background-color: #8baa36;
+  // color: #466000;
 `;
 
 export const StyledBurger = styled.button`
-  align-items: center;
-  border-style: none;
-  background-color: transparent;
   display: flex;
   align-items: center;
+  margin-left: 28px;
+
+  color: #a6a9b3;
   border-style: none;
   background-color: transparent;
-  margin-left: 27.5px;
+
+  transition: color 0.25s ease-out;
 
   @media screen and (min-width: 768px) {
     margin-left: 54px;
+    display: none;
   }
 
   @media screen and (min-width: 1440px) {
     display: none;
+  }
+
+  &:hover,
+  :focus {
+    color: #e4e6f0;
   }
 `;

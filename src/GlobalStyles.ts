@@ -5,6 +5,7 @@ export const GlobalStyles = createGlobalStyle`
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
+  color:  #e4e6f0;
   background-color: ${(p) => p.theme.colors.mainBgColor};
 }
 code {
@@ -21,7 +22,7 @@ h1, h2 {
   margin: 0;
 }
 img{
-  max-width: 100%;
+  min-width: 100%;
   height: auto;
   display: block;
 }
