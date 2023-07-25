@@ -19,11 +19,11 @@ type Props = {
   work: WorkType;
 };
 
-type Props = {
-  work: WorkType;
-};
+// console.log(myWorks);
+  
+const Works: React.FC = () => {
+  const works = JSON.parse(myWorks);
 
-  console.log(myWorks);
   return (
     <Container>
       <Title>Work</Title>
@@ -32,10 +32,12 @@ type Props = {
         vision to life.
       </Subtitle>
       <WorkList>
-        {works.map((work) => (
+        {works.map((work: WorkType) => (
           <WorkItem work={work} />
         ))}
       </WorkList>
     </Container>
   );
 };
+
+export default Works;
