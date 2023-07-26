@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 
 export const Title = styled.div`
   margin-bottom: 40px;
+  margin-top: 100px;
 `;
 
 export const Subtitle = styled.div`
@@ -12,3 +13,5 @@ export const Subtitle = styled.div`
 `;
 
 export const WorkList = styled.ul``;
+
+export const Item = styled.li``;

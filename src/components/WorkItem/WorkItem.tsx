@@ -4,13 +4,23 @@ import avatar from "../../images/IMG_3207.jpg";
 import { Button } from "../Button/Button";
 import { Container, Title, Subtitle } from "./WorkItem.styled";
 
-export const WorkItem: React.FC = () => {
+type ProjectType = {
+  id: string;
+  baner: string;
+  title: string;
+  overview: string;
+  technology: string[];
+};
+
+type Props = {
+  project: ProjectType;
+};
+
+export const WorkItem: React.FC<Props> = (props) => {
   return (
     <Container>
-      <Title>Work1</Title>
-      <Subtitle>
-        Work1 description
-      </Subtitle>
+      <Title>{props.project.title}</Title>
+      <Subtitle>{props.project.overview}</Subtitle>
     </Container>
   );
 };

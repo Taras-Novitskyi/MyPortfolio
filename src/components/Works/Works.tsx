@@ -1,28 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-import myWorks from "../../myWorks.json";
+import myWorksData from "../../data/myWorks.json";
 import avatar from "../../images/IMG_3207.jpg";
 import { Container } from "../Container/Container";
 import { Button } from "../Button/Button";
 import { WorkItem } from "../WorkItem/WorkItem";
-import { Title, Subtitle, WorkList } from "./Works.styled";
+import { Title, Subtitle, WorkList, Item } from "./Works.styled";
 
-type WorkType = {
+interface IProject {
   id: string;
   baner: string;
   title: string;
-  Overview: string;
+  overview: string;
   technology: string[];
-};
+}
 
-type Props = {
-  work: WorkType;
-};
+export const Works: React.FC = () => {
+  const [projects, setProjects] = useState<IProject[]>([]);
 
-// console.log(myWorks);
-  
-const Works: React.FC = () => {
-  const works = JSON.parse(myWorks);
+  useEffect(() => {
+    setProjects(myWorksData);
+  }, []);
 
   return (
     <Container>
@@ -32,12 +31,12 @@ const Works: React.FC = () => {
         vision to life.
       </Subtitle>
       <WorkList>
-        {works.map((work: WorkType) => (
-          <WorkItem work={work} />
+        {projects.map((project: IProject) => (
+          <Item key={project.id}>
+            <WorkItem project={project} />
+          </Item>
         ))}
       </WorkList>
     </Container>
   );
 };
-
-export default Works;

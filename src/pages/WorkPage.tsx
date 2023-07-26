@@ -1,7 +1,9 @@
 import React from "react";
 
+import { Works } from "../components/Works/Works";
+
 const WorkPage: React.FC = () => {
-  return <div>WorkPage</div>;
+  return <Works />;
 };
 
 export default WorkPage;
