@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 
 import myWorksData from "../../data/myWorks.json";
-import avatar from "../../images/IMG_3207.jpg";
 import { Container } from "../Container/Container";
-import { Button } from "../Button/Button";
 import { WorkItem } from "../WorkItem/WorkItem";
 import { Title, Subtitle, WorkList, Item } from "./Works.styled";
 
