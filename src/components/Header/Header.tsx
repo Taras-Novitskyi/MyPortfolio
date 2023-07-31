@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 import { RxHamburgerMenu } from "react-icons/rx";
 
 import { Button } from "../Button/Button";
 import { Container } from "../Container/Container";
+import { Modal } from "../Modal/Modal";
 import {
   StyledHeader,
   StyledLink,
@@ -15,6 +16,12 @@ import {
 } from "./Header.styled";
 
 export const Header: React.FC = () => {
+  const [isShow, setIsShow] = useState(false);
+
+  const closeModal = useCallback(() => {
+    setIsShow(false);
+  }, []);
+
   const location = useLocation();
 
   return (
@@ -27,7 +34,14 @@ export const Header: React.FC = () => {
               <StyledLink to="/about">About</StyledLink>
               <StyledLink to="/work">Work</StyledLink>
               <StyledLink to="/contact">Contact</StyledLink>
-              <Button type="button">Get in touch</Button>
+              <Button
+                type="button"
+                onClick={() => {
+                  setIsShow(true);
+                }}
+              >
+                Get in touch
+              </Button>
             </StyledNav>
 
             <StyledBurger
@@ -42,6 +56,7 @@ export const Header: React.FC = () => {
           </MenuContainer>
         </HeaderWrapper>
       </Container>
+      {isShow && <Modal onClose={closeModal} />}
     </StyledHeader>
   );
 };
