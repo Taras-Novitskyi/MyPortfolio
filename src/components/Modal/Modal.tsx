@@ -1,13 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import ReactDOM from "react-dom";
 
-import {
-  Backdrop,
-  Message,
-  CloseBtn,
-  ModalBox,
-  MessageBox,
-} from "./Modal.styled";
+import { Backdrop, Title, CloseBtn, ModalBox, Form } from "./Modal.styled";
 
 type Props = {
   onClose: () => void;
@@ -53,12 +47,13 @@ export const Modal: React.FC<Props> = (props) => {
     <>
       <Backdrop>
         <ModalBox ref={tooltipRef}>
-          <MessageBox>
-            <Message>
-              Let’s get in touch.
-            </Message>
-            <CloseBtn onClick={closeModal} />
-          </MessageBox>
+          <Title>Let’s get in touch.</Title>
+          <Form>
+            <input></input>
+            <input></input>
+            <input></input>
+          </Form>
+          <CloseBtn onClick={closeModal} />
         </ModalBox>
       </Backdrop>
     </>,
