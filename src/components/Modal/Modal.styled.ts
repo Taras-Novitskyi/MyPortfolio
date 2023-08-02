@@ -4,6 +4,7 @@ export const Backdrop = styled.div`
   position: fixed;
   top: 0;
   left: 0;
+  /* inset: 0; */
   width: 100%;
   height: 100%;
 
@@ -17,9 +18,12 @@ export const ModalBox = styled.div`
   left: 50%;
   z-index: 100;
 
-  transform: translate(-50%, -50%);
   width: 300px;
   height: 300px;
+  transform: translate(-50%, -50%);
+
+  text-align: center;
+  background-color: #22252a;
 
   border-radius: 30px;
 
@@ -35,27 +39,35 @@ export const ModalBox = styled.div`
 `;
 
 export const Form = styled.form`
-  padding-top: 40px;
-  padding-right: 26px;
-  padding-left: 26px;
-
-  @media (min-width: 375px) {
-    padding-top: 22px;
-    padding-right: 18px;
-    padding-left: 18px;
-  }
 
   @media (min-width: 768px) {
-    padding-top: 32px;
-    padding-right: 24px;
-    padding-left: 24px;
   }
 
   @media (min-width: 1440px) {
   }
 `;
 
+export const Label = styled.label`
+`;
+
+export const Input = styled.input`
+  width: 260px;
+  height: 32px;
+  margin-bottom: 24px;
+`;
+
+export const Textarea = styled.textarea`
+  width: 260px;
+  height: 100px;
+  margin-bottom: 24px;
+
+  resize: none;
+`;
+
 export const Title = styled.div`
+  margin-top: 32px;
+  margin-bottom: 28px;
+
   font-family: "Poppins";
   font-size: ${(p) => p.theme.fontSizes.xxxl}px;
   font-weight: 600;

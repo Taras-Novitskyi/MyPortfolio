@@ -1,7 +1,17 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import ReactDOM from "react-dom";
+import { Button } from "../Button/Button";
 
-import { Backdrop, Title, CloseBtn, ModalBox, Form } from "./Modal.styled";
+import {
+  Backdrop,
+  Title,
+  CloseBtn,
+  ModalBox,
+  Form,
+  Input,
+  Textarea,
+  Label,
+} from "./Modal.styled";
 
 type Props = {
   onClose: () => void;
@@ -49,9 +59,13 @@ export const Modal: React.FC<Props> = (props) => {
         <ModalBox ref={tooltipRef}>
           <Title>Let’s get in touch.</Title>
           <Form>
-            <input></input>
-            <input></input>
-            <input></input>
+            <Label htmlFor="name"></Label>
+            <Input id="name" placeholder="Your Name" />
+            <Label htmlFor="email"></Label>
+            <Input id="email" placeholder="Your Email" />
+            <Label htmlFor="message"></Label>
+            <Textarea id="message" placeholder="Your Message" />
+            <Button>Send message</Button>
           </Form>
           <CloseBtn onClick={closeModal} />
         </ModalBox>
