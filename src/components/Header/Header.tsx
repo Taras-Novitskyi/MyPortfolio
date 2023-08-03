@@ -18,7 +18,7 @@ import {
 export const Header: React.FC = () => {
   const [isShow, setIsShow] = useState(false);
 
-  const closeModal = useCallback(() => {
+  const onClose = useCallback(() => {
     setIsShow(false);
   }, []);
 
@@ -56,7 +56,7 @@ export const Header: React.FC = () => {
           </MenuContainer>
         </HeaderWrapper>
       </Container>
-      {isShow && <Modal onClose={closeModal} />}
+      {isShow && <Modal closeModal={onClose} />}
     </StyledHeader>
   );
 };

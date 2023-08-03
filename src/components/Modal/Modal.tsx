@@ -14,7 +14,7 @@ import {
 } from "./Modal.styled";
 
 type Props = {
-  onClose: () => void;
+  closeModal: () => void;
 };
 
 type TooltipRefType = {
@@ -24,20 +24,16 @@ type TooltipRefType = {
 export const Modal: React.FC<Props> = (props) => {
   const tooltipRef: any = useRef(null);
 
-  const closeModal = useCallback(() => {
-    props.onClose();
-  }, [props]);
-
   useEffect(() => {
-    const handleClick = (e: any) => {
+    const handleClick = (e: MouseEvent) => {
       if (tooltipRef?.current && !tooltipRef.current.contains(e.target)) {
-        closeModal();
+        props.closeModal();
       }
     };
 
-    const handleKeyDown = (e: any) => {
+    const handleKeyDown = (e: KeyboardEvent) => {
       if (e.code === "Escape") {
-        closeModal();
+        props.closeModal();
       }
     };
 
@@ -51,14 +47,19 @@ export const Modal: React.FC<Props> = (props) => {
       document.removeEventListener("click", handleClick, true)!;
       bodyElement.style.overflow = "auto";
     };
-  }, [closeModal]);
+  }, [props]);
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    props.closeModal();
+  };
 
   return ReactDOM.createPortal(
     <>
       <Backdrop>
         <ModalBox ref={tooltipRef}>
           <Title>Let’s get in touch.</Title>
-          <Form>
+          <Form onSubmit={handleSubmit}>
             <Label htmlFor="name"></Label>
             <Input id="name" placeholder="Your Name" />
             <Label htmlFor="email"></Label>
@@ -67,7 +68,7 @@ export const Modal: React.FC<Props> = (props) => {
             <Textarea id="message" placeholder="Your Message" />
             <Button>Send message</Button>
           </Form>
-          <CloseBtn onClick={closeModal} />
+          <CloseBtn onClick={props.closeModal} />
         </ModalBox>
       </Backdrop>
     </>,
