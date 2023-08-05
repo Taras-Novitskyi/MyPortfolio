@@ -19,27 +19,27 @@ export const ModalBox = styled.div`
   z-index: 100;
 
   width: 300px;
-  height: 300px;
+  /* height: 300px; */
   transform: translate(-50%, -50%);
+
+  padding-top: 32px;
+  padding-bottom: 32px;
 
   text-align: center;
   background-color: #22252a;
 
-  border-radius: 30px;
+  border-radius: 20px;
 
   @media (min-width: 768px) {
     width: 400px;
-    height: 400px;
+    /* height: 400px; */
   }
 
   @media (min-width: 1440px) {
-    width: 500px;
-    height: 500px;
   }
 `;
 
 export const Form = styled.form`
-
   @media (min-width: 768px) {
   }
 
@@ -47,8 +47,7 @@ export const Form = styled.form`
   }
 `;
 
-export const Label = styled.label`
-`;
+export const Label = styled.label``;
 
 export const Input = styled.input`
   width: 260px;
@@ -65,18 +64,13 @@ export const Textarea = styled.textarea`
 `;
 
 export const Title = styled.div`
-  margin-top: 32px;
   margin-bottom: 28px;
 
   font-family: "Poppins";
-  font-size: ${(p) => p.theme.fontSizes.xxxl}px;
+  font-size: ${(p) => p.theme.fontSizes.xxl}px;
   font-weight: 600;
   color: #e4e6f0;
   border-color: transparent;
-
-  @media (min-width: 375px) {
-    font-size: ${(p) => p.theme.fontSizes.xxl}px;
-  }
 
   @media (min-width: 768px) {
     font-size: ${(p) => p.theme.fontSizes.xxxl}px;
