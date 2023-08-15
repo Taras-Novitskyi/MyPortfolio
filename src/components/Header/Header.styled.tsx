@@ -25,15 +25,6 @@ export const HeaderWrapper = styled.div`
 export const MenuContainer = styled.div`
   display: flex;
   align-items: center;
-
-  /* @media (min-width: 768px) {
-    top: ${(p) => p.theme.space(4.5)};
-    right: ${(p) => p.theme.space(8)};
-  }
-  @media (min-width: 1440px) {
-    top: ${(p) => p.theme.space(4.5)};
-    right: ${(p) => p.theme.space(25)};
-  } */
 `;
 
 export const StyledNav = styled.nav`
@@ -49,8 +40,6 @@ export const StyledNav = styled.nav`
 export const StyledLink = styled(NavLink)`
   position: relative;
   display: flex;
-  // flex-direction: row;
-  // justify-content: center;
   align-items: center;
 
   font-family: "Poppins";
@@ -89,15 +78,12 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const Logo = styled(NavLink)`
-  // height: 24px;
 
   font-family: "Kaushan Script", cursive;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
   color: #53336e;
-
-  // color: #466000;
 `;
 
 export const StyledBurger = styled.button`
