@@ -22,7 +22,7 @@ export const Works: React.FC = () => {
 
   return (
     <Container>
-      <Title>Work</Title>
+      <Title></Title>
       <Subtitle>
         Take a look at my latest projects and see how I can help bring your
         vision to life.

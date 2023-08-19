@@ -7,11 +7,11 @@ export const Content = styled.div`
   justify-content: center;
   align-items: center;
   gap: 40px;
-  margin-top: 120px;
+  margin-top: ${(p) => p.theme.space(25)};
 
   @media screen and (min-width: 768px) {
     flex-direction: column;
-    margin-top: 160px;
+    margin-top: ${(p) => p.theme.space(40)};
   }
 `;
 
