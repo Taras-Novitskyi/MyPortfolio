@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import ReactDOM from "react-dom";
 import { Button } from "../Button/Button";
 
@@ -61,11 +61,11 @@ export const Modal: React.FC<Props> = (props) => {
           <Title>Let’s get in touch.</Title>
           <Form onSubmit={handleSubmit}>
             <Label htmlFor="name"></Label>
-            <Input id="name" placeholder="Your Name" />
+            <Input id="name" type="text" placeholder="Your Name" required />
             <Label htmlFor="email"></Label>
-            <Input id="email" placeholder="Your Email" />
+            <Input id="email" type="email" placeholder="Your Email" required />
             <Label htmlFor="message"></Label>
-            <Textarea id="message" placeholder="Your Message" />
+            <Textarea id="message" placeholder="Your Message" required />
             <Button>Send message</Button>
           </Form>
           <CloseBtn onClick={props.closeModal} />
