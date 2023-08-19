@@ -78,12 +78,11 @@ export const StyledLink = styled(NavLink)`
 `;
 
 export const Logo = styled(NavLink)`
-
   font-family: "Kaushan Script", cursive;
   font-weight: 700;
   font-size: 18px;
   line-height: 22px;
-  color: #53336e;
+  color: ${(p) => p.theme.colors.firstAccentColor};
 `;
 
 export const StyledBurger = styled.button`

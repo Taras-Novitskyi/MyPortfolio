@@ -4,8 +4,11 @@ export const theme = {
     mainBgColor: "#22252A",
     darkBgColor: "#1E1F28",
     lightBgColor: "ECECEC",
-    firstAccentColor: "#8BAA36",
-    secondAccentColor: "#8BAA36",
+
+    firstAccentColor: "#53336e",
+    secondAccentColor: "#a6a9b3",
+    hoverLight: "#e4e6f0",
+
     heroTitle: "#FAFAFA",
     thirdAccentColor: "#2A2C36",
     mainTitleText: "#FAFAFA",
